@@ -34,7 +34,7 @@ Aplikasi daftar film populer berbasis **SwiftUI + MVVM** yang mengambil data dar
 
    ```bash
    git clone git@github.com:baghizzhd/iOS-Development-test.git
-   cd <repo>
+   cd iOS-Development-test
    ```
 
 2. **Buka proyek di Xcode**
