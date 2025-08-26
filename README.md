@@ -18,6 +18,7 @@ Aplikasi daftar film populer berbasis **SwiftUI + MVVM** yang mengambil data dar
 * **MVVM**
 * **Core Data** (persistensi)
 * **URLSession** (networking)
+* **WebView** (rendering video di dalam aplikasi)
 
 ## 📦 Prasyarat
 
