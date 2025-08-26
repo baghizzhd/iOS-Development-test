@@ -72,45 +72,27 @@ Aplikasi daftar film populer berbasis **SwiftUI + MVVM** yang mengambil data dar
 MovieApp/
 ├─ App/
 │  └─ MovieAppApp.swift
+|  └─ Persistence.swift
 ├─ Model/
 │  └─ Movie.swift
-├─ Networking/
+├─ Service/
 │  └─ APIService.swift
+|  └─ CoreDataManager.swift
 ├─ Persistence/
 │  └─ CoreDataManager.swift
 │  └─ MovieApp.xcdatamodeld (Entity: MovieEntity)
 ├─ View/
+│  ├─ HelperViews/
+|  ├─── MovieRowView.swift
+|  ├─── WebView.swift 
 │  ├─ MovieListView.swift
 │  ├─ MovieRowView.swift
-│  └─ MovieDetailView.swift
 └─ ViewModel/
-   └─ MovieListViewModel.swift
+│  └─ MovieListViewModel.swift
+└─ Resources/
+   └─ Assets.swift
+   └─ MovieApp.xcdatamodeld
 ```
-
-## 🔑 Konfigurasi API Key (opsional, recommended)
-
-**A. Menggunakan `.xcconfig`**
-
-1. Buat file `Configs/Debug.xcconfig` dan `Configs/Release.xcconfig`:
-
-   ```ini
-   // Debug.xcconfig
-   TMDB_API_KEY = your_tmdb_api_key_here
-   ```
-2. Hubungkan ke target:
-
-   * **TARGETS → MovieApp → Build Settings → (All) → User-Defined** → pastikan `TMDB_API_KEY` terbaca.
-3. Tambahkan ke **Info.plist**:
-
-   * Key: `TMDB_API_KEY` (String) → `$(TMDB_API_KEY)`
-4. Ubah `APIService` agar membaca dari `Bundle.main.infoDictionary?["TMDB_API_KEY"]`.
-
-**B. Menggunakan Info.plist langsung**
-
-* Tambahkan key `TMDB_API_KEY` (String).
-* Di `APIService`, ambil nilai dari Info.plist.
-
-> **Keamanan:** Hindari commit API key ke publik. Gunakan variabel lingkungan/secret untuk CI/CD.
 
 ## 🧪 Validasi Fitur “Last Updated” & Expiry
 
