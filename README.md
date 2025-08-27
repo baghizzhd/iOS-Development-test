@@ -1,4 +1,4 @@
-# MovieApp (iOS 26)
+# MovieApp (iOS 18)
 
 Aplikasi daftar film populer berbasis **SwiftUI + MVVM** yang mengambil data dari **The Movie Database (TMDB)**. Mendukung pencarian, pull-to-refresh, **cache offline** via Core Data, serta **penanda “Last updated: today / yesterday / N day(s) ago”** dan mekanisme **refresh otomatis jika data kedaluwarsa ≥ 1 hari**.
 
@@ -27,7 +27,7 @@ Aplikasi daftar film populer berbasis **SwiftUI + MVVM** yang mengambil data dar
 * **Akun TMDB** (opsional jika ingin mengganti API Key)
 * **macOS** terbaru yang kompatibel dengan Xcode di atas
 
-> **Catatan:** Pastikan **Deployment Target = iOS 26.0** pada target proyek Anda.
+> **Catatan:** Pastikan **Deployment Target = iOS 18.0** pada target proyek Anda.
 
 ## 🚀 Instalasi & Menjalankan
 
