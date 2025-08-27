@@ -26,20 +26,28 @@ class MovieListViewModel: ObservableObject {
         }
     }
 
-    // "today", "yesterday", or "N day ago" (e.g., "2 day ago")
     var lastUpdatedLabel: String {
         guard let date = lastUpdated else { return "not available" }
         let cal = Calendar.autoupdatingCurrent
-
-        if cal.isDateInToday(date) { return "today" }
-        if cal.isDateInYesterday(date) { return "yesterday" }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a" // Set the format to display hours and minutes
+        
+        if cal.isDateInToday(date) {
+            let timeString = dateFormatter.string(from: date)
+            return "today \(timeString)"
+        }
+        if cal.isDateInYesterday(date) {
+            let timeString = dateFormatter.string(from: date)
+            return "yesterday \(timeString)"
+        }
 
         let startGiven = cal.startOfDay(for: date)
         let startNow   = cal.startOfDay(for: Date())
         let days = cal.dateComponents([.day], from: startGiven, to: startNow).day ?? 0
+        let timeString = dateFormatter.string(from: date)
 
-        // You asked for singular “day” always: "2 day ago"
-        return "\(max(days, 2)) day ago"
+        // Display days ago and time
+        return "\(max(days, 2)) day ago \(timeString)"
     }
 
     // Search filter
